@@ -4,7 +4,7 @@ Stranded-Alien is a simple video game made using the Godot engine.
 
 The goal is to collect a certain number of coins in order to finish the game. The alien has a "warmth" meter, that needs go be replenished at fire places. The alien will freeze if the meter is depleted.
 
-To play the game on Windows, the .exe file is located in the `Playable Game` folder.
+To play the game on Windows, download the whole project and open the .exe file that is located in the `Playable Game` folder (The .pck file is required to play the game).
 
 If you want a bit of a challange I suggest not reading the tips section at the end and figuring out the game on your own. But, what do i know, I'm just a README file.
 
