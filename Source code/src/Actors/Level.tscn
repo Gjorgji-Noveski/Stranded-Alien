@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/snow background.png" type="Texture" id=1]
+[ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Scripts/Level.gd" type="Script" id=3]
+[ext_resource path="res://Assets/ambient_music.mp3" type="AudioStream" id=4]
+[ext_resource path="res://src/Actors/Barrel spawner.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Actors/Collectible Spawner.tscn" type="PackedScene" id=6]
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 510, 298 )
+
+[node name="Collectible Spawner" parent="." instance=ExtResource( 6 )]
+
+[node name="Barrel spawner" parent="." instance=ExtResource( 5 )]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( 0, -2 )
+motion_mirroring = Vector2( 1024, 1024 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -10.0
+autoplay = true

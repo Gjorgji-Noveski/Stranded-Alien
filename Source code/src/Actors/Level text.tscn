@@ -1,0 +1,83 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/Scripts/Level text.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Fonts/Roboto-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/you froze.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 14
+use_filter = true
+extra_spacing_top = -4
+extra_spacing_char = 1
+font_data = ExtResource( 2 )
+
+[node name="Player UI text" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_edit_vertical_guides_": [ 703.0 ]
+}
+
+[node name="Safe place" type="Label" parent="."]
+margin_left = 289.0
+margin_top = 59.0
+margin_right = 509.0
+margin_bottom = 138.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.784314, 0.784314, 0.784314, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+text = "Safe place found
+Rest, little one
+Tomorrow's a new day
+Press 'r'"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Victory" type="Label" parent="."]
+visible = false
+margin_left = 385.0
+margin_top = 61.0
+margin_right = 538.0
+margin_bottom = 140.0
+rect_scale = Vector2( 2, 2 )
+custom_colors/font_color = Color( 0.784314, 0.784314, 0.784314, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Congratulations !
+All gems were retrieved"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="press r" type="Label" parent="."]
+visible = false
+margin_left = 347.0
+margin_top = 95.0
+margin_right = 500.0
+margin_bottom = 174.0
+rect_scale = Vector2( 2, 2 )
+custom_colors/font_color = Color( 0.784314, 0.784314, 0.784314, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Press R"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="you froze" type="TextureRect" parent="."]
+visible = false
+margin_left = 326.0
+margin_top = -71.0
+margin_right = 626.0
+margin_bottom = 229.0
+rect_scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 3 )

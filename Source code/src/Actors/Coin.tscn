@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/crystal-32-blue.png" type="Texture" id=1]
+[ext_resource path="res://src/Scripts/Coin.gd" type="Script" id=2]
+[ext_resource path="res://Assets/coin_pickup.wav" type="AudioStream" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "gem spin"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("gem:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1 ]
+}
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 9.0
+height = 10.0
+
+[node name="Coins" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+"anims/gem spin" = SubResource( 1 )
+
+[node name="gem" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+hframes = 8
+
+[node name="coin_area" type="Area2D" parent="."]
+collision_layer = 8
+
+[node name="collider" type="CollisionShape2D" parent="coin_area"]
+shape = SubResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -10.0
+
+[connection signal="area_entered" from="coin_area" to="." method="_on_coin_area_area_entered"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]
