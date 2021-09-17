@@ -5,7 +5,7 @@ signal warmth_depleted
 export (float) onready var fill_up_value = 1
 export (float) onready var fill_up_speed  = 0.2
 export (float) onready var decay_value = 1
-export (float) onready var decay_speed = 1
+export (float) onready var decay_speed = 2
 
 
 func _ready() -> void:
