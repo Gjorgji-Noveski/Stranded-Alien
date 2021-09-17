@@ -13,8 +13,8 @@ onready var spawn_end_on_nth_barrel:int = 3
 
 #so segashna brzina 1000 pikseli gi pominuva za 4 sekundi
 # how far away should the spawned barrel be, mnogu e max 4k
-onready var min_x_y_pos:int = 1000
-onready var max_x_y_pos:int = 2000
+onready var min_x_y_pos:int = 800
+onready var max_x_y_pos:int = 1600
 
 func adjust_settings_for_difficulty():
 	if GlobalVariables.game_difficulty == GlobalVariables.difficulty.easy:
